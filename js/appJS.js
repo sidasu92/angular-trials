@@ -9,4 +9,4 @@
   app.controller("StoreController", function($scope){
     $scope.product = gem;
   });
-})();
+})();          
