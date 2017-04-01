@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h1>Hi, This is Sid.</h1>
+		<h2>I am {{10 + 15}} years old.</h2>
+		<!-- using alias for controller -->
+		<div ng-controller="GemController as ctrller">
+			<h2>{{ctrller.product.name}}</h2>
+			<h2>${{ctrller.product.value}}</h2>
+			<h2>{{ctrller.product.description}}</h2>
+		</div>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/appJS.js"></script>
+	</body>
+</html>
