@@ -6,7 +6,7 @@
     description: "This is my gem."
   };
   var app = angular.module('gemStore', []);
-  app.controller("StoreController", function($scope){
-    $scope.product = gem;
+  app.controller("StoreController", function(){
+    this.product = gem;
   });
-})();          
+})();
