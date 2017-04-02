@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="gemStore">
 	<head>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	</head>
 	<body>
 		<h1>Hi, This is Sid.</h1>
 		<h2>I am {{10 + 15}} years old.</h2>
 		<!-- using alias for controller -->
-		<div ng-controller="StoreController as ctrller">
-			<h2>{{ctrller.product.name}}</h2>
-			<h2>${{ctrller.product.value}}</h2>
+		<div class="product row" ng-controller="StoreController as ctrller">
+			<h2>{{ctrller.product.name}}
+				 <em class="pull-right">${{ctrller.product.price}}</em>
+			</h2>
 			<h2>{{ctrller.product.description}}</h2>
 		</div>
 		<script type="text/javascript" src="js/angular.min.js"></script>
