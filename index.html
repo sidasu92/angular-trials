@@ -9,7 +9,7 @@
 			<ul class="list-group">
 				<li ng-repeat="product in controller.products" class="list-group-item">
 					<h3> {{product.name}} </h3>
-					<em class="pull-right">${{product.value}}</em>
+					<em class="pull-right">${{product.value | currency}}</em><br/>
 				</li>
 			</ul>
 		<script type="text/javascript" src="js/angular.min.js"></script>
