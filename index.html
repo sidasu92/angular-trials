@@ -7,9 +7,9 @@
 		<h1>Hi, This is Sid.</h1>
 		<h2>I am {{10 + 15}} years old.</h2>
 		<!-- using alias for controller -->
-		<div class="product row" ng-controller="StoreController as ctrller">
+		<div class="product" ng-controller="StoreController as ctrller">
 			<h2>{{ctrller.product.name}}
-				 <em class="pull-right">${{ctrller.product.price}}</em>
+				 <em class="pull-right">${{ctrller.product.value}}</em>
 			</h2>
 			<h2>{{ctrller.product.description}}</h2>
 		</div>
