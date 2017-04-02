@@ -7,9 +7,10 @@
 		<!-- using alias for controller -->
 		<div ng-controller="StoreController as controller">
 			<ul class="list-group">
-				<li ng-repeat="product in controller.products" class="list-group-item">
+				<li ng-repeat="product in controller.products  | orderBy:'-value'" class="list-group-item">
 					<h3> {{product.name}} </h3>
-					<em class="pull-right">${{product.value | currency}}</em><br/>
+					<em class="pull-right">{{product.value | currency}}</em><br/>
+					<img ng-src="{{product.image}}" />
 				</li>
 			</ul>
 		<script type="text/javascript" src="js/angular.min.js"></script>
