@@ -4,18 +4,14 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	</head>
 	<body>
-		<h1>Hi, This is Sid.</h1>
-		<h2>I am {{10 + 15}} years old.</h2>
 		<!-- using alias for controller -->
-		<div class="product" ng-controller="StoreController as ctrller">
-			<div ng-repeat="product in ctrller.products">
-				<h2>{{product.name}}
-					 <em class="pull-right">${{product.value}}</em>
-				</h2>
-				<h2>{{product.description}}</h2>
-				<button ng-show="product.canPurchase"> Add to Cart </button>
-			</div>
-		</div>
+		<div ng-controller="StoreController as controller">
+			<ul class="list-group">
+				<li ng-repeat="product in controller.products" class="list-group-item">
+					<h3> {{product.name}} </h3>
+					<em class="pull-right">${{product.value}}</em>
+				</li>
+			</ul>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/appJS.js"></script>
 	</body>

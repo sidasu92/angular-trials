@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<h1>Hi, This is Sid.</h1>
+		<h2>I am {{10 + 15}} years old.</h2>
+		<!-- using alias for controller -->
+		<div class="product" ng-controller="StoreController as ctrller">
+			<div ng-repeat="product in ctrller.products">
+				<h2>{{product.name}}
+					 <em class="pull-right">${{product.value}}</em>
+				</h2>
+				<h2>{{product.description}}</h2>
+				<button ng-show="product.canPurchase"> Add to Cart </button>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/appJS.js"></script>
+	</body>
+</html>
