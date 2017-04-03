@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<!-- using alias for controller -->
+		<div ng-controller="StoreController as controller">
+			<ul class="list-group">
+				<li ng-repeat="product in controller.products  | orderBy:'-value'" class="list-group-item">
+					<h3> {{product.name}} </h3>
+					<em class="pull-right">{{product.value | currency}}</em><br/>
+					<img ng-src="{{product.image}}" />
+
+					<section ng-controller="PanelController as panel">
+						<ul class="nav nav-pills">
+							<li ng-class="{active: panel.isSelectedTab(1)}">
+								<a href ng-click="panel.selectTab(1)"> Description </a>
+							</li>
+							<li ng-class="{active: panel.isSelectedTab(2)}">
+								<a href ng-click="panel.selectTab(2)"> Specifications </a>
+							</li>
+							<li ng-class="{active: panel.isSelectedTab(3)}">
+								<a href ng-click="panel.selectTab(3)"> Reviews </a>
+							</li>
+						</ul>
+						<div class="panel" ng-show="panel.isSelectedTab(1)">
+							<h4>Description</h4>
+							<blockquote>{{product.description}}</blockquote>
+						</div>
+						<div class="panel" ng-show="panel.isSelectedTab(2)">
+							<h4>Specifications</h4>
+							<blockquote>{{product.specification}}</blockquote>
+						</div> 
+						<div class="panel" ng-show="panel.isSelectedTab(3)">
+							<h4>Reviews</h4>
+							<blockquote>{{product.review}}</blockquotep>
+						</div>
+					</section>
+				</li>
+			</ul>
+
+		</div>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/appJS.js"></script>
+	</body>
+</html>
