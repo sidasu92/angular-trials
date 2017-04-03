@@ -65,4 +65,9 @@
       return curTab === this.tab;
     };
   });
+
+  app.controller("ReviewController", function(){
+// empty object
+    this.review = {};
+  });
 })();
