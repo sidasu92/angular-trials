@@ -27,4 +27,20 @@
   app.controller("StoreController", function(){
     this.products = gems;
   });
+
+  app.controller("PanelController", function(){
+    // initialize tab = 1
+    //property of the tab
+    this.tab = 1;
+
+    //function expression to set tab values on click
+    this.selectTab = function(setTab){
+      this.tab = setTab;
+    };
+
+    //function expression to set the tab as active
+    this.isSelectedTab = function(curTab) {
+      return curTab === this.tab;
+    };
+  });
 })();
