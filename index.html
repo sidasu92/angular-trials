@@ -40,16 +40,16 @@
 								<cite>by: {{review.author}}</cite>
 							</blockquote>
 							<!-- to take user input  -->
-							<form name="reviewForm">
+							<form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
 								<fieldset class="form-group">
 									<blockquote>
-										<b> Stars: {{review.stars}}</b>
-										{{review.body}}
-										<cite>by: {{review.author}}</cite>
+										<b> Stars: {{reviewCtrl.review.stars}}</b>
+										{{reviewCtrl.review.body}}
+										<cite>by: {{reviewCtrl.review.author}}</cite>
 									</blockquote>
 								</fieldset>
 								<fieldset class="form-group">
-									<select ng-model="review.stars">
+									<select ng-model="reviewCtrl.review.stars">
 										<option value="1">1 star</option>
 										<option value="2">2 stars</option>
 										<option value="3">3 stars</option>
@@ -58,11 +58,11 @@
 									</select>
 								</fieldset>
 								<fieldset class="form-group">
-									<textarea ng-model="review.body"></textarea>
+									<textarea ng-model="reviewCtrl.review.body"></textarea>
 								</fieldset>
 								<fieldset class="form-group">
 									<label for="email">by:</label>
-									<input type="email" name="email"  ng-model="review.author" />
+									<input type="email" name="email"  ng-model="reviewCtrl.review.author" />
 								</fieldset>
 								<fieldset class="form-group">
 									<input type="Submit" name="Submit" value="Submit"/>
