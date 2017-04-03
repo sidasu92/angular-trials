@@ -37,7 +37,7 @@
     this.selectTab = function(setTab){
       this.tab = setTab;
     };
-
+ 
     //function expression to set the tab as active
     this.isSelectedTab = function(curTab) {
       return curTab === this.tab;
