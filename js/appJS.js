@@ -9,7 +9,18 @@
       image: "images/boy.jpg",
       description: "I am Sidhant's avatar. Lorem ipsum pifsum",
       specification: "",
-      review: "One of it's kind."
+      reviews: [
+        {
+          stars: 5,
+          body: "I love <3",
+          author: "sid@asu.com"
+        },
+        {
+          stars: 5,
+          body: "Aweosmely awesome!!!",
+          author: "asu@sid.com"
+        }
+      ]
 
     },
     {
@@ -20,7 +31,18 @@
       image: "images/girl.jpg",
       description: "This is Sun's avatar. Lorem ipsum pifsum",
       specification: "",
-      review: "Unmatched!"
+      reviews: [
+        {
+          stars: 5,
+          body: "Wow, just WOW!",
+          author: "sid@asu.com"
+        },
+        {
+          stars: 5,
+          body: "<3 love <3",
+          author: "asu@sid.com"
+        }
+      ]
     }
 ];
   var app = angular.module('gemStore', []);
@@ -37,7 +59,7 @@
     this.selectTab = function(setTab){
       this.tab = setTab;
     };
- 
+
     //function expression to set the tab as active
     this.isSelectedTab = function(curTab) {
       return curTab === this.tab;

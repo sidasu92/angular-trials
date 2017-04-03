@@ -31,10 +31,14 @@
 						<div class="panel" ng-show="panel.isSelectedTab(2)">
 							<h4>Specifications</h4>
 							<blockquote>{{product.specification}}</blockquote>
-						</div> 
+						</div>
 						<div class="panel" ng-show="panel.isSelectedTab(3)">
 							<h4>Reviews</h4>
-							<blockquote>{{product.review}}</blockquotep>
+							<blockquote ng-repeat="review in product.reviews">
+								<b> Stars: {{review.stars}}</b>
+								{{review.body}}
+								<cite>by: {{review.author}}</cite>
+							</blockquotep>
 						</div>
 					</section>
 				</li>
