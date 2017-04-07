@@ -90,18 +90,35 @@
           // initialize tab = 1
           //property of the tab
           this.tab = 1;
-
           //function expression to set tab values on click
           this.selectTab = function(setTab) {
               this.tab = setTab;
           };
-
           //function expression to set the tab as active
           this.isSelectedTab = function(curTab) {
               return curTab === this.tab;
           };
         },
         controllerAs: "panel"
+      };
+    });
+
+    app.directive('reviewForm', function(){
+      return {
+        restrict: 'E',
+        templateUrl: 'review-form.html',
+        controller: function() {
+          // empty object
+          this.review = {};
+
+          // to add review in the products
+          this.addReview = function(product) {
+            product.reviews.push(this.review);
+            //clear the review object
+            this.review = {};
+          };
+        },
+        controllerAs: 'reviewCtrl'
       };
     });
 })();
