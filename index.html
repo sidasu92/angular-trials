@@ -19,66 +19,9 @@
 					<product-details></product-details>
 					<img ng-src="{{product.image}}" />
 
-					<section ng-controller="PanelController as panel">
-						<ul class="nav nav-pills">
-							<li ng-class="{active: panel.isSelectedTab(1)}">
-								<a href ng-click="panel.selectTab(1)"> Description </a>
-							</li>
-							<li ng-class="{active: panel.isSelectedTab(2)}">
-								<a href ng-click="panel.selectTab(2)"> Specifications </a>
-							</li>
-							<li ng-class="{active: panel.isSelectedTab(3)}">
-								<a href ng-click="panel.selectTab(3)"> Reviews </a>
-							</li>
-						</ul>
-						<div class="panel" ng-show="panel.isSelectedTab(1)">
-							<h4>Description</h4>
-							<blockquote>{{product.description}}</blockquote>
-						</div>
-						<div class="panel" ng-show="panel.isSelectedTab(2)">
-							<h4>Specifications</h4>
-							<blockquote>{{product.specification}}</blockquote>
-						</div>
-						<div class="panel" ng-show="panel.isSelectedTab(3)">
-							<h4>Reviews</h4>
-							<blockquote ng-repeat="review in product.reviews">
-								<b> Stars: {{review.stars}}</b>
-								{{review.body}}
-								<cite>by: {{review.author}}</cite>
-							</blockquote>
-							<!-- to take user input  -->
-							<form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
-								ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-								<fieldset class="form-group">
-									<blockquote>
-										<b> Stars: {{reviewCtrl.review.stars}}</b>
-										{{reviewCtrl.review.body}}
-										<cite>by: {{reviewCtrl.review.author}}</cite>
-									</blockquote>
-								</fieldset>
-								<fieldset class="form-group">
-									<select ng-model="reviewCtrl.review.stars" required>
-										<option value="1">1 star</option>
-										<option value="2">2 stars</option>
-										<option value="3">3 stars</option>
-										<option value="4">4 stars</option>
-										<option value="5">5 stars</option>
-									</select>
-								</fieldset>
-								<fieldset class="form-group">
-									<textarea ng-model="reviewCtrl.review.body" required></textarea>
-								</fieldset>
-								<fieldset class="form-group">
-									<label for="email">by:</label>
-									<input type="email" name="email" required ng-model="reviewCtrl.review.author" />
-								</fieldset>
-								reviewForm is valid? {{reviewForm.$valid}}
-								<fieldset class="form-group">
-									<input type="Submit" name="Submit" value="Submit"/>
-								</fieldset>
-							</form>
-						</div>
-					</section>
+					<h3> Panel Details
+						<panel-details></panel-details>
+					</h3>
 				</li>
 			</ul>
 
