@@ -16,8 +16,7 @@
 		<div ng-controller="StoreController as controller">
 			<ul class="list-group">
 				<li ng-repeat="product in controller.products  | orderBy:'-value'" class="list-group-item">
-					<h3> {{product.name}} </h3>
-					<em class="pull-right">{{product.value | currency}}</em><br/>
+					<product-details></product-details>
 					<img ng-src="{{product.image}}" />
 
 					<section ng-controller="PanelController as panel">

@@ -74,4 +74,11 @@
           this.review = {};
         };
     });
+
+    app.directive('productDetails', function(){
+      return {
+        restrict: 'E',
+        templateUrl: "product-details.html"
+      };
+    });
 })();
