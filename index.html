@@ -40,7 +40,7 @@
 								<cite>by: {{review.author}}</cite>
 							</blockquote>
 							<!-- to take user input  -->
-							<form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+							<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
 								<fieldset class="form-group">
 									<blockquote>
 										<b> Stars: {{reviewCtrl.review.stars}}</b>
